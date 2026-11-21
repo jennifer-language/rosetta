@@ -23,7 +23,7 @@ func encode(s as string) {
 func decode(s as string) {
     def out as string;
     for (def m in regex.findAll('([0-9]+)([A-Z])', $s)) {
-        $out = $out + strings.repeat($m.groups[1], convert.toInt($m.groups[0]));
+        $out = $out + strings.replicate($m.groups[1], convert.toInt($m.groups[0]));
     }
     return $out;
 }

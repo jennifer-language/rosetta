@@ -22,7 +22,7 @@ func pop(s as Stack) {
     if (empty($s)) {
         throw Error{kind: "value", message: "pop from an empty stack"};
     }
-    return Popped{value: lists.last($s.items), rest: Stack{items: lists.pop($s.items)}};
+    return Popped{value: lists.last($s.items), rest: Stack{items: $s.items[..len($s.items) - 1]}};
 }
 
 func empty(s as Stack) {

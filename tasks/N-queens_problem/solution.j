@@ -39,7 +39,7 @@ func place(n as int, cols as list of int, s as Search) {
 def empty as Search;
 def eight as Search init place(8, [], $empty);
 for (def c in $eight.first) {
-    io.printf("%s\n", strings.repeat(". ", $c) + "Q " + strings.repeat(". ", 7 - $c));
+    io.printf("%s\n", strings.replicate(". ", $c) + "Q " + strings.replicate(". ", 7 - $c));
 }
 for (def n in 1..11) {
     io.printf("%d: %d\n", $n, place($n, [], $empty).count);

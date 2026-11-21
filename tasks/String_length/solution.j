@@ -1,10 +1,10 @@
-use convert;
+use encoding;
 use io;
 use regex;
 
 # len counts characters (code points) of a string and bytes of bytes.
 func show(s as string) {
-    def b as bytes init convert.bytesFromString("utf-8", $s);
+    def b as bytes init encoding.encode("utf-8", $s);
     # Graphemes, approximately: a character with the combining marks after it.
     def g as int init len(regex.findAll('\P{M}\p{M}*', $s));
     io.printf("%s: %d characters, %d UTF-8 bytes, %d graphemes\n", $s, len($s), len($b), $g);

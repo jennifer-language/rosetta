@@ -5,7 +5,7 @@ def s as string init "alphaBETA";
 io.printf("%s\n", strings.upper($s));
 io.printf("%s\n", strings.lower($s));
 
-# Not in the core on purpose: the @mplx/xformat deck has case=title and case=swap.
+# Not in the core on purpose: the @mplx/texttransform deck has case=title and case=swap.
 func capitalize(s as string) {
     if ($s == "") {
         return $s;

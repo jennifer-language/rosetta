@@ -6,7 +6,7 @@ Solutions to [Rosetta Code](https://rosettacode.org/) tasks in
 is the master copy: every solution is formatted, linted, run and compared with
 its posted output before it goes on the wiki, and again on each release.
 
-Last checked on Jennifer **0.26.0** (`JENNIFER_VERSION`).
+Last checked on Jennifer **0.27.0** (`JENNIFER_VERSION`).
 
 ## Layout
 

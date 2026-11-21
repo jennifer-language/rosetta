@@ -29,7 +29,7 @@ jobs:
       matrix:
         # The release the solutions say they work with (JENNIFER_VERSION),
         # and the head of the interpreter's main branch.
-        jennifer: ["0.26.0", "main"]
+        jennifer: ["0.27.0", "main"]
     steps:
       - uses: actions/checkout@v4
 

@@ -1,0 +1,54 @@
+# SPDX-License-Identifier: MIT-0
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  # Weekly against main as well: a language change shows which posted
+  # solutions need an update before the next release.
+  schedule:
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Solutions on ${{ matrix.jennifer }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # The release the solutions say they work with (JENNIFER_VERSION),
+        # and the head of the interpreter's main branch.
+        jennifer: ["0.26.0", "main"]
+    steps:
+      - uses: actions/checkout@v4
+
+      # Only a branch or commit needs a toolchain; a release installs its .deb.
+      - if: ${{ !contains(matrix.jennifer, '.') }}
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.26"
+
+      - name: Install Jennifer ${{ matrix.jennifer }}
+        run: ./tools/install-jennifer.sh "${{ matrix.jennifer }}"
+
+      - name: Format, lint, run and compare
+        run: ./tools/check.sh
+
+      # Fetches rosettacode.org and example.com; a site being down is not a
+      # broken solution, so this step reports without failing the job.
+      - name: The network tasks
+        continue-on-error: true
+        env:
+          ROSETTA_NETWORK: "1"
+        run: ./tools/check.sh $(for f in tasks/*/network; do basename "$(dirname "$f")"; done)

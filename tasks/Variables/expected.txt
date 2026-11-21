@@ -1,0 +1,9 @@
+0 Jennifer 0.5 true [1, 2, 3] {"ada": 36}
+runtime: toInt("forty-two"): not a valid integer
+20
+1 99
+7
+2
+Jennifer has 3 items, 'Jennifer' is literal
+{$name}
+map

@@ -1,0 +1,6 @@
+caught value at line 7: age -3 is negative
+caught runtime: list index 5 out of bounds (len 3)
+caught http, status 404
+undo
+cleanup
+caught work: failed

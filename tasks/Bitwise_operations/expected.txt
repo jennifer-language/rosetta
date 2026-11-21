@@ -1,0 +1,10 @@
+a = -255, b = 2
+a and b: 0
+a or b: -253
+a xor b: -253
+not a: 254
+a << b: -1020
+a >> b (arithmetic): -64
+a >> b (logical): 4611686018427387840
+a rotated left by b: -1017
+a rotated right by b: 9223372036854775744

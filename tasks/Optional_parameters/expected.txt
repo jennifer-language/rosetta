@@ -1,0 +1,4 @@
+[[, q, z], [a, b, c], [zap, zip, Zot]]
+[[zap, zip, Zot], [a, b, c], [, q, z]]
+[[a, b, c], [, q, z], [zap, zip, Zot]]
+[[zap, zip, Zot], [a, b, c], [, q, z]]

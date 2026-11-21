@@ -1,0 +1,3 @@
+expected.txt
+solution.j
+exit code 0

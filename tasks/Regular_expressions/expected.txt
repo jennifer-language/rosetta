@@ -1,0 +1,5 @@
+ends with 'string'
+does not start with 'You'
+I am another string
+world hello
+12-34: from 12 to 34

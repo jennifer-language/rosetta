@@ -1,0 +1,14 @@
+Rosetta Code
+1363
+code
+true
+{"name":"Jennifer","appeared":2026,"sigils":["$"],"typed":true}
+{
+  "name": "Jennifer",
+  "appeared": 2026,
+  "sigils": [
+    "$"
+  ],
+  "typed": true
+}
+runtime: json.decode: duplicate key "a" in object at line 1, column 10

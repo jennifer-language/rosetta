@@ -1,0 +1,10 @@
+iterative: 13 is at index 5
+recursive: 13 is at index 5
+iterative: 2 is at index 0
+recursive: 2 is at index 0
+iterative: 29 is at index 9
+recursive: 29 is at index 9
+iterative: 4 is not in the list
+recursive: 4 is not in the list
+iterative: 30 is not in the list
+recursive: 30 is not in the list

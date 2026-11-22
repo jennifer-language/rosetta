@@ -1,0 +1,2 @@
+27: 112 elements, starting [27, 82, 41, 124], ending [8, 4, 2, 1]
+below 100000: 77031, with 351 elements

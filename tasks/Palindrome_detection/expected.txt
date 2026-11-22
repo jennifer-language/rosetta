@@ -1,0 +1,5 @@
+racecar: exact true, inexact true
+rosetta: exact false, inexact false
+été: exact true, inexact true
+A man, a plan, a canal: Panama!: exact false, inexact true
+ΝΙΨΟΝ ΑΝΟΜΗΜΑΤΑ ΜΗ ΜΟΝΑΝ ΟΨΙΝ: exact false, inexact true

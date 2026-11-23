@@ -1,0 +1,31 @@
+Kant eats with forks 1 and 2 (meal 1)
+Kant puts the forks down and thinks
+Aristotle eats with forks 0 and 1 (meal 1)
+Marx eats with forks 3 and 4 (meal 1)
+Aristotle puts the forks down and thinks
+Marx puts the forks down and thinks
+Russell eats with forks 0 and 4 (meal 1)
+Spinoza eats with forks 2 and 3 (meal 1)
+Russell puts the forks down and thinks
+Spinoza puts the forks down and thinks
+Marx eats with forks 3 and 4 (meal 2)
+Kant eats with forks 1 and 2 (meal 2)
+Marx puts the forks down and thinks
+Aristotle eats with forks 0 and 1 (meal 2)
+Kant puts the forks down and thinks
+Spinoza eats with forks 2 and 3 (meal 2)
+Spinoza puts the forks down and thinks
+Marx eats with forks 3 and 4 (meal 3)
+Aristotle puts the forks down and thinks
+Kant eats with forks 1 and 2 (meal 3)
+Kant puts the forks down and thinks
+Marx puts the forks down and thinks
+Russell eats with forks 0 and 4 (meal 2)
+Spinoza eats with forks 2 and 3 (meal 3)
+Russell puts the forks down and thinks
+Aristotle eats with forks 0 and 1 (meal 3)
+Spinoza puts the forks down and thinks
+Aristotle puts the forks down and thinks
+Russell eats with forks 0 and 4 (meal 3)
+Russell puts the forks down and thinks
+all five ate 3 times

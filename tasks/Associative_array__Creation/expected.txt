@@ -1,0 +1,6 @@
+{"Ada": 37, "Grace": 85, "Alan": 41}, 3 entries
+{"one": 1}
+Grace: 85
+has Linus: false
+runtime: map has no entry for key Linus
+{"Ada": 37, "Grace": 85}

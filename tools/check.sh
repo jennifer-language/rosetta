@@ -15,6 +15,7 @@
 #                   an extended regex that some output line must match
 #   network         needs the network; skipped unless ROSETTA_NETWORK=1
 #   args            command-line arguments for the run, one per line
+#   stdin           the run's standard input (otherwise it reads nothing)
 #
 # JENNIFER picks the interpreter (default: jennifer on PATH).
 
@@ -62,7 +63,11 @@ for f in "${files[@]}"; do
         mapfile -t args <"$d/args"
     fi
     # Run from the task directory, as a reader would.
-    if ! (cd "$d" && timeout 120 "$jennifer" run solution.j "${args[@]}") >"$out" 2>&1; then
+    input=/dev/null
+    if [ -f "$d/stdin" ]; then
+        input="$d/stdin"
+    fi
+    if ! (cd "$d" && timeout 120 "$jennifer" run solution.j "${args[@]}") <"$input" >"$out" 2>&1; then
         note "FAIL $t: exit status $?"
         sed 's/^/    /' "$out" | tail -20 >&2
         continue

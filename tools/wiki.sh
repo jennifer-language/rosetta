@@ -6,7 +6,8 @@
 #   tools/wiki.sh FizzBuzz
 #
 # The output is expected.txt; a task with expected.grep instead is run (a
-# network task needs the network). The version is JENNIFER_VERSION, the
+# network task needs the network). A task that reads a stdin file shows that
+# input above the output. The version is JENNIFER_VERSION, the
 # release the solutions were last checked on.
 
 set -euo pipefail
@@ -20,8 +21,15 @@ printf '=={{header|Jennifer}}==\n'
 printf '{{works with|Jennifer|%s}}\n' "$(cat JENNIFER_VERSION)"
 printf '<syntaxhighlight lang="jennifer">\n'
 cat "$d/solution.j"
-printf '</syntaxhighlight>\n{{out}}\n<pre>\n'
-# <pre> still decodes entities: escape & and < so the output shows as printed.
+printf '</syntaxhighlight>\n'
+# <pre> still decodes entities: escape & and < so text shows as it is.
+escape() { sed -e 's/&/\&amp;/g' -e 's/</\&lt;/g'; }
+if [ -f "$d/stdin" ]; then
+    printf 'Input:\n<pre>\n'
+    escape <"$d/stdin"
+    printf '</pre>\n'
+fi
+printf '{{out}}\n<pre>\n'
 if [ -f "$d/expected.txt" ]; then
     cat "$d/expected.txt"
 else
@@ -29,6 +37,10 @@ else
     if [ -f "$d/args" ]; then
         mapfile -t args <"$d/args"
     fi
-    (cd "$d" && "${JENNIFER:-jennifer}" run solution.j "${args[@]}")
-fi | sed -e 's/&/\&amp;/g' -e 's/</\&lt;/g'
+    input=/dev/null
+    if [ -f "$d/stdin" ]; then
+        input="$d/stdin"
+    fi
+    (cd "$d" && "${JENNIFER:-jennifer}" run solution.j "${args[@]}") <"$input"
+fi | escape
 printf '</pre>\n'

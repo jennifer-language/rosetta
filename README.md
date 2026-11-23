@@ -17,6 +17,7 @@ tasks/<Page_name>/      one directory per task page; spaces as "_", "/" as "__"
     expected.grep       instead, for output that changes: regexes to match
     network             a task that needs the network
     args                command-line arguments for the run, one per line
+    stdin               the run's standard input
 pending/<Page_name>/    solutions blocked by a missing feature (see its README)
 tools/check.sh          check every solution (or the tasks named)
 tools/wiki.sh <task>    print the task's wiki section, ready to paste

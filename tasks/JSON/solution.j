@@ -27,5 +27,5 @@ io.printf("%s\n", json.encodePretty($lang));
 try {
     json.decode('{"a": 1, "a": 2}');
 } catch (e) {
-    io.printf("%s: %s\n", $e.kind, $e.message);
+    io.printf("%s\n", $e.message);
 }

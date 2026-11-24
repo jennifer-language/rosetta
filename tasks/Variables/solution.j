@@ -19,7 +19,7 @@ $count = $count + 1;
 try {
     $count = convert.toInt("forty-two");
 } catch (e) {
-    io.printf("%s: %s\n", $e.kind, $e.message);
+    io.printf("\"forty-two\" is not an int\n");
 }
 
 # Constants are UPPER_CASE, read without the sigil, and deep: no element of a

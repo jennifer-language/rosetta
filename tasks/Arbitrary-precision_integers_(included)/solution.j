@@ -1,3 +1,4 @@
+use convert;
 use decimal;
 use io;
 
@@ -6,5 +7,5 @@ def exp as int init 1;
 for (def i in 0..9) {
     $exp = $exp * 4;
 }
-def s as string init decimal.toString(decimal.pow(5, $exp));
+def s as string init convert.toString(decimal.pow(5, $exp));
 io.printf("%s...%s, %d digits\n", $s[0..20], $s[len($s) - 20..], len($s));
